@@ -86,15 +86,15 @@ extension InitialGamesStoryboardSegue: UIViewControllerAnimatedTransitioning
     {
         transitionContext.destinationViewController.beginAppearanceTransition(true, animated: true)
         
-        transitionContext.destinationView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        transitionContext.destinationView.alpha = 0.0
+        //transitionContext.destinationView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        transitionContext.destinationView.alpha = 1
         
         self.animator.addAnimations {
             transitionContext.sourceView.alpha = 0.0
             transitionContext.sourceView.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
             
             transitionContext.destinationView.alpha = 1.0
-            transitionContext.destinationView.transform = CGAffineTransform.identity
+            //transitionContext.destinationView.transform = CGAffineTransform.identity
         }
         
         self.animator.addCompletion { (position) in

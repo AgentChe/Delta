@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dkK-ii-Bx4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dkK-ii-Bx4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,18 +19,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Delta" translatesAutoresizingMaskIntoConstraints="NO" id="plh-tL-LY0">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Delta" translatesAutoresizingMaskIntoConstraints="NO" id="plh-tL-LY0">
                                 <rect key="frame" x="47" y="193" width="281" height="281"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="plh-tL-LY0" secondAttribute="height" id="8qM-L2-ASa"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash.Image" translatesAutoresizingMaskIntoConstraints="NO" id="a77-xs-mxI">
+                                <rect key="frame" x="115" y="265" width="145" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="6LK-Do-C6j"/>
+                                    <constraint firstAttribute="height" constant="137" id="WoM-us-SJJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.14728124936421713" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.89263600109999997" green="0.89263600109999997" blue="0.89263600109999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="plh-tL-LY0" firstAttribute="width" relation="lessThanOrEqual" secondItem="8Uu-wz-ps8" secondAttribute="width" multiplier="0.75" id="8j9-39-Y2s"/>
                             <constraint firstItem="plh-tL-LY0" firstAttribute="centerY" secondItem="8Uu-wz-ps8" secondAttribute="centerY" id="COW-Co-NFK"/>
                             <constraint firstItem="plh-tL-LY0" firstAttribute="height" secondItem="8Uu-wz-ps8" secondAttribute="height" multiplier="0.75" priority="900" id="G3L-7B-xVc"/>
+                            <constraint firstItem="a77-xs-mxI" firstAttribute="centerY" secondItem="8Uu-wz-ps8" secondAttribute="centerY" id="Yy9-i6-ahb"/>
+                            <constraint firstItem="a77-xs-mxI" firstAttribute="centerX" secondItem="8Uu-wz-ps8" secondAttribute="centerX" id="cUQ-Ds-VpM"/>
                             <constraint firstItem="plh-tL-LY0" firstAttribute="width" secondItem="8Uu-wz-ps8" secondAttribute="width" multiplier="0.75" priority="950" id="n3i-kS-7eQ"/>
                             <constraint firstItem="plh-tL-LY0" firstAttribute="centerX" secondItem="8Uu-wz-ps8" secondAttribute="centerX" id="sp5-Kf-N7G"/>
                             <constraint firstItem="plh-tL-LY0" firstAttribute="height" relation="lessThanOrEqual" secondItem="8Uu-wz-ps8" secondAttribute="height" multiplier="0.75" id="ubN-Qh-I5H"/>
@@ -44,5 +53,6 @@
     </scenes>
     <resources>
         <image name="Delta" width="1024" height="1024"/>
+        <image name="Splash.Image" width="405" height="381"/>
     </resources>
 </document>

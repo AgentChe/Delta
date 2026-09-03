@@ -1,0 +1,134 @@
+/*
+  Localizable.strings
+  Delta
+
+  Created by Андрей Чернышев on 28.06.2024.
+  Copyright © 2024 Riley Testut. All rights reserved.
+*/
+
+// MARK: General
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+"Next" = "Next";
+
+// MARK: ImagePicker
+"ImagePicker.TakePhoto" = "Take a photo";
+"ImagePicker.CameraRoll" = "Camera roll";
+"ImagePicker.PhotoLibrary" = "Photo library";
+
+// MARK: Splash
+"Splash.Loading" = "Loading...";
+
+// MARK: Paygate
+"Paygate.Error.Title" = "Error";
+"Paygate.Error.Text" = "An error occurred during execution. Try later.";
+"Paygate.Error.Button" = "OK";
+"Paygate.Title" = "Upgrade Premium";
+"Paygate.Info1" = "Get all the curated collections";
+"Paygate.Info2" = "Import & play own games";
+"Paygate.Info3" = "1000+ retro gaming wallpapers";
+"Paygate.EnableFreeTrial" = "Enable Free Trial";
+"Paygate.FreeTrialEnabled" = "Free Trial Enabled";
+"Paygate.Yearly" = "Yearly";
+"Paygate.Yearly.Bottom" = "%@/year";
+"Paygate.PerWeek" = "per week";
+"Paygate.FreeTrialDays" = "3-day free trial";
+"Paygate.Then" = "%@\n";
+"Paygate.Continue" = "Continue";
+"Paygate.TryFreeSubscribe" = "Try Free & Subscribe";
+"Paygate.CancelAnytime" = "Cancel Anytime";
+"Paygate.NoPaymentNow" = "No payment now";
+"Paygate.TermsOfUse" = "Terms of Use";
+"Paygate.PrivacyPolicy" = "Privacy Policy";
+"Paygate.RestorePurchases" = "Restore Purchases";
+"Paygate.BestOffer" = "⭐ Best Offer";
+
+// MARK: Onboarding
+"Onboarding.Welcome.Text" = "Welcome to Emulator, where the past and present collide in the most epic way possible.";
+"Onboarding.Welcome.Button" = "START";
+"Onboarding.Category.Title" = "Choose categories you’d like to play";
+"Onboarding.Category.Action" = "action";
+"Onboarding.Category.Adventure" = "Adventure";
+"Onboarding.Category.Puzzle" = "Puzzle";
+"Onboarding.Category.InteractiveFiction" = "Interactive\nfiction";
+"Onboarding.Category.RPG" = "RPG";
+"Onboarding.Category.Survival" = "Survival";
+"Onboarding.About1.Text" = "Dive into our handpicked selection of legendary titles and start playing instantly. Your next adventure is just a tap away!";
+"Onboarding.About2.Text" = "Search our expansive library of retro games and install them directly within the app.";
+"Onboarding.About3.Text" = "Already have game files? Import your downloaded ROMs in just a few taps!";
+"Onboarding.Console.Title" = "Out of interest, what's you favorite console?";
+"Onboarding.Console.GBC" = "game boy color";
+"Onboarding.Console.GBA" = "game boy advance";
+"Onboarding.Console.NES" = "Nintendo entertainment system";
+"Onboarding.Console.SNES" = "super Nintendo entertainment system";
+"Onboarding.Console.N64" = "Nintendo 64";
+
+"Main.Home" = "Home";
+"Main.Library" = "Library";
+"Main.Wallpapers" = "Wallpapers";
+
+// MARK: Menu
+"Menu.Title" = "MENU";
+"Menu.TermsOfUse" = "TERMS OF USE";
+"Menu.PrivacyPolicy" = "PRIVACY POLICY";
+"Menu.ContactUs" = "CONTACT US";
+"Menu.ImportInstruction" = "HOW TO ADD A GAME";
+"Menu.ClearCash" = "CLEAR CASH";
+
+// MARK: ImportInstruction
+"ImportInstruction.Slide1.Title" = "Explore the Curated Library";
+"ImportInstruction.Slide1.Text" = "Browse through a variety of classic games across different consoles. Our curated selection makes it easy to find and install your favorites directly into the app.";
+"ImportInstruction.Slide2.Title" = "Install from the Library";
+"ImportInstruction.Slide2.Text" = "Found a game you like? Tap the \"Download\" button to instantly add it to your collection. No extra steps needed—just play!";
+"ImportInstruction.Slide3.Title" = "Import Your Own ROMs";
+"ImportInstruction.Slide3.Text" = "Have your own game files? Tap the \"Import\" button, select the ROM from your device, and it will be added to your library, ready to play!";
+
+// MARK: WallpapersCategories
+"WallpapersCategories.Title" = "WALLPAPERS";
+"WallpapersCategories.Count" = "%i WALLPAPERS";
+
+// MARK: WallpapersPreview
+"WallpapersPreview.Save" = "Save";
+"WallpapersPreview.Result.Failure" = "Error when saving photo";
+"WallpapersPreview.Result.NotPermission" = "No permission to save";
+"WallpapersPreview.Result.Success" = "Saved to Camera Roll";
+
+// MARK: Library
+"Home.Title" = "HOME";
+"Home.Search" = "SEARCH";
+"Home.SearchEmpty.Title" = "No games found";
+"Home.SearchEmpty.Text" = "We couldn’t find any games matching your query. Try another query.";
+
+// MARK: LibraryGame
+"LibraryGame.Description" = "description";
+"LibraryGame.Download" = "Download";
+"LibraryGame.CancelLoading" = "Cancel loading";
+"LibraryGame.Play" = "play";
+"LibraryGame.SimilarGames" = "similar games";
+"LibraryGame.ImportInstruction" = "how to import the game";
+
+// MARK: Imported
+"Imported.Title" = "library";
+"Imported.Import" = "import";
+"Imported.InstructionTitle" = "how to import a game";
+"Imported.Empty.Title" = "No games yet";
+"Imported.Empty.SubTitle" = "Imported games will appear here";
+"Imported.Menu.Delete" = "delete game";
+"Imported.Menu.Close" = "close";
+"Imported.Imported" = "Imported";
+
+// MARK: Favorites
+"Favorites.Title" = "SAVED";
+
+// MARK: ReplaceGame
+"ReplaceGame.Title" = "replace the game?";
+"ReplaceGame.SubTitle" = "Looks like you imported the game that is already in your library:";
+"ReplaceGame.Replace" = "replace";
+"ReplaceGame.Keep" = "keep separate";
+
+// MARK: ClearCash
+"ClearCash.Title" = "clear cash";
+"ClearCash.Text.Start" = "Are you sure you want to clear entire cache? This will delete all your downloaded games.";
+"ClearCash.Text.Complete" = "Storage is cleared.";
+"ClearCash.Button.Start" = "proceed";
+"ClearCash.Button.Complete" = "continue";

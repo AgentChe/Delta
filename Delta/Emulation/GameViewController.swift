@@ -90,6 +90,7 @@ private extension GameViewController
 
 class GameViewController: DeltaCore.GameViewController
 {
+    var menuTapped: (() -> Void)?
     /// Assumed to be Delta.Game instance
     override var game: GameProtocol? {
         willSet {
@@ -293,6 +294,11 @@ class GameViewController: DeltaCore.GameViewController
         }
         else if let standardInput = StandardGameControllerInput(input: input), standardInput == .menu, gameController.inputType == .controllerSkin
         {
+            
+            emulatorCore?.stop()
+            game = nil
+            menuTapped?()
+            
             self.isMenuButtonHeldDown = true
             
             let sustainInputsMapping = SustainInputsMapping(gameController: gameController)

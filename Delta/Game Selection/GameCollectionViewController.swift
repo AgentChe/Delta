@@ -97,6 +97,11 @@ extension GameCollectionViewController
 
 class GameCollectionViewController: UICollectionViewController
 {
+    var game: Game! {
+        didSet {
+            launchGame(game: game, clearScreen: true)
+        }
+    }
     var gameCollection: GameCollection? {
         didSet {
             self.title = self.gameCollection?.shortName
@@ -155,9 +160,15 @@ class GameCollectionViewController: UICollectionViewController
 /// UIViewController
 extension GameCollectionViewController
 {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.isToolbarHidden = true
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        view.alpha = 0
         
         self.collectionView?.dataSource = self.dataSource
         self.collectionView?.prefetchDataSource = self.dataSource
@@ -169,6 +180,8 @@ extension GameCollectionViewController
         }
         
         self.update()
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool)
@@ -511,6 +524,122 @@ private extension GameCollectionViewController
                 }
                 
                 let cell = self.collectionView.cellForItem(at: indexPath)
+                self.performSegue(withIdentifier: "unwindFromGames", sender: cell)
+            }
+            catch
+            {
+                self.isResumingGame = false
+                
+                switch error
+                {
+                case .alreadyRunning:
+                    let alertController = UIAlertController(title: NSLocalizedString("Game Paused", comment: ""), message: NSLocalizedString("Would you like to resume where you left off, or restart the game?", comment: ""), preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Resume", comment: ""), style: .default, handler: { (action) in
+                        // This logic has been copied into self.resume()
+                        
+                        self.isResumingGame = true
+                        
+                        if let activeEmulatorCore = self.activeEmulatorCore, !activeEmulatorCore.isWirelessMultiplayerActive
+                        {
+                            let fetchRequest = SaveState.rst_fetchRequest() as! NSFetchRequest<SaveState>
+                            fetchRequest.predicate = NSPredicate(format: "%K == %@ AND %K == %d", #keyPath(SaveState.game), game, #keyPath(SaveState.type), SaveStateType.auto.rawValue)
+                            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(SaveState.creationDate), ascending: true)]
+                            
+                            do
+                            {
+                                let saveStates = try game.managedObjectContext?.fetch(fetchRequest)
+                                self.activeSaveState = saveStates?.last
+                            }
+                            catch
+                            {
+                                print(error)
+                            }
+                        }
+                        
+                        // Disable videoManager to prevent flash of black
+                        self.activeEmulatorCore?.videoManager.isEnabled = false
+                        
+                        launchGame(ignoringErrors: [LaunchError.alreadyRunning, LaunchError.multiplayerSessionActive(nil)])
+                        
+                        // The game hasn't changed, so the activeEmulatorCore is the same as before, so we need to enable videoManager it again
+                        self.activeEmulatorCore?.videoManager.isEnabled = true
+                    }))
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Restart", comment: ""), style: .destructive, handler: { (action) in
+                        launchGame(ignoringErrors: [LaunchError.alreadyRunning, LaunchError.multiplayerSessionActive(nil)])
+                    }))
+                    self.present(alertController, animated: true)
+                    
+                case .biosNotFound:
+                    let alertController = UIAlertController(title: NSLocalizedString("Missing Required DS Files", comment: ""), message: NSLocalizedString("Delta requires certain files to play Nintendo DS games. Please import them to launch this game.", comment: ""), preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Import Files", comment: ""), style: .default) { _ in
+                        self.performSegue(withIdentifier: "showDSSettings", sender: nil)
+                    })
+                    alertController.addAction(.cancel)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                case .downloadingGameSave, .systemAlreadyRunning, .multiplayerSessionActive:
+                    let alertController = UIAlertController(title: error.errorTitle, message: error.localizedDescription, preferredStyle: .alert)
+                    
+                    if error.recoveryActions.isEmpty
+                    {
+                        alertController.addAction(.ok)
+                    }
+                    else
+                    {
+                        alertController.addAction(.cancel)
+                        
+                        for action in error.recoveryActions
+                        {
+                            alertController.addAction(action)
+                        }
+                    }
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        if ignoreAlreadyRunningError
+        {
+            launchGame(ignoringErrors: [LaunchError.alreadyRunning])
+        }
+        else
+        {
+            launchGame(ignoringErrors: [])
+        }
+    }
+    
+    func launchGame(game: Game, clearScreen: Bool, ignoreAlreadyRunningError: Bool = false)
+    {
+        self.isResumingGame = false
+        
+        func launchGame(ignoringErrors ignoredErrors: [Error])
+        {
+            
+            
+            do
+            {
+                try self.validateLaunchingGame(game, ignoringErrors: ignoredErrors)
+                
+                if clearScreen
+                {
+                    self.activeEmulatorCore?.gameViews.forEach { $0.inputImage = nil }
+                }
+                
+                var cell: UICollectionViewCell!
+                
+                for cell_ in self.collectionView?.visibleCells ?? []
+                {
+                    if let indexPath = self.collectionView?.indexPath(for: cell_)
+                    {
+                        if game == self.dataSource.item(at: indexPath) {
+                            cell =  self.collectionView.cellForItem(at: indexPath)
+                        }
+                    }
+                    
+                }
                 self.performSegue(withIdentifier: "unwindFromGames", sender: cell)
             }
             catch

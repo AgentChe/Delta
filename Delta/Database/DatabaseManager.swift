@@ -774,3 +774,96 @@ private extension DatabaseManager
         }
     }
 }
+// MARK: Fetch
+extension DatabaseManager {
+    func fetchAllGames() -> [Game]? {
+        let context = self.viewContext
+
+        let fetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
+        
+        return try? context.fetch(fetchRequest)
+    }
+    
+    func fetchGame(byName name: String) -> [Game]? {
+        let context = self.viewContext
+        
+        let fetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        
+        return try? context.fetch(fetchRequest)
+    }
+    
+    func fetchGame(byIdentifier identifier: String) -> [Game]? {
+        let context = self.viewContext
+        
+        let fetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "identifier == %@", identifier)
+        
+        return try? context.fetch(fetchRequest)
+    }
+
+    func fetchCollections() -> [GameCollection]? {
+        let context = self.viewContext
+        
+        let fetchRequest: NSFetchRequest<GameCollection> = GameCollection.fetchRequest()
+        
+        return try? context.fetch(fetchRequest)
+    }
+    
+    func fetchCollection(identifier: String) -> [GameCollection]? {
+        let context = self.viewContext
+        
+        let fetchRequest: NSFetchRequest<GameCollection> = GameCollection.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "identifier == %@", identifier)
+        
+        return try? context.fetch(fetchRequest)
+    }
+    
+    func deleteGame(_ game: Game, completion: ((Error?) -> Void)? = nil) {
+        let identifier = game.identifier
+        
+        let context = self.viewContext
+        
+        context.perform {
+            context.delete(game)
+            
+            do {
+                try context.save()
+                
+                LibraryGameDownloader.shared.remove(gameIdentifier: identifier)
+                
+                completion?(nil)
+            } catch {
+                completion?(error)
+            }
+        }
+    }
+    
+    func deleteAllGames() {
+        let collections = fetchCollections() ?? []
+        let games = fetchAllGames() ?? []
+        
+        let context = self.viewContext
+        
+        context.perform {
+            games.forEach { game in
+                try? FileManager.default.removeItem(at: game.fileURL)
+                
+                context.delete(game)
+            }
+            
+            collections.forEach { collection in
+                context.delete(collection)
+            }
+            
+            do {
+                try context.save()
+                
+                LibraryGameDownloader.shared.removeAll()
+                
+                DatabaseMediator.shared.clearAll()
+            } catch {}
+        }
+        
+    }
+}

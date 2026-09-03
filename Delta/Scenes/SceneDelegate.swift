@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import OtterScaleiOS
+import RxSwift
 import DeltaCore
 import Harmony
 
@@ -46,29 +47,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
     {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
-        // Become default scene handler for Handoff/other deep links.
-        scene.activationConditions.prefersToActivateForTargetContentIdentifierPredicate = NSPredicate(value: true)
-        
-        self.window?.tintColor = .deltaPurple
-        
-        if let context = connectionOptions.urlContexts.first
-        {
-            self.handle(.url(context.url))
+//        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
+//        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
+//        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+//        
+//        // Become default scene handler for Handoff/other deep links.
+//        scene.activationConditions.prefersToActivateForTargetContentIdentifierPredicate = NSPredicate(value: true)
+//        
+//        self.window?.tintColor = .deltaPurple
+//        
+//        if let context = connectionOptions.urlContexts.first
+//        {
+//            self.handle(.url(context.url))
+//        }
+//        
+//        if let shortcutItem = connectionOptions.shortcutItem
+//        {
+//            self.handle(.shortcut(shortcutItem))
+//        }
+//        
+//        let launchViewController = self.window?.rootViewController as! LaunchViewController
+//        self.launchViewController = launchViewController
+//        
+//        self.window?.makeKeyAndVisible()
+//
+        guard let windowScene = scene as? UIWindowScene else {
+            return
         }
         
-        if let shortcutItem = connectionOptions.shortcutItem
-        {
-            self.handle(.shortcut(shortcutItem))
-        }
-        
-        let launchViewController = self.window?.rootViewController as! LaunchViewController
-        self.launchViewController = launchViewController
-        
-        self.window?.makeKeyAndVisible()
+        window = GameWindow(windowScene: windowScene)
+        window?.rootViewController = SplashViewController.make()
+        window?.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene)

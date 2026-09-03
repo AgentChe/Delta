@@ -1,6 +1,9 @@
 # Mac OS X
 #
 *.DS_Store
+.Trashes
+.Spotlight-V100
+.fseventsd
 
 # Xcode
 #
@@ -30,6 +33,30 @@ xcuserdata
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
+*.dSYM
+*.dSYM.zip
+
+## Swift Package Manager
+.swiftpm/
+Packages/
+
+## CocoaPods
+# Pods are installed with `pod install`; Podfile.lock is committed instead.
+Pods/
+
+## Carthage
+Carthage/Build/
+
+## fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+## Editors
+.idea/
+*.swp
+*~
 
 ## Project-Specific
 Delta.playground

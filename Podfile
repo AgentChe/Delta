@@ -1,4 +1,4 @@
-platform :ios, '14.0'
+platform :ios, '16.0'
 
 inhibit_all_warnings!
 
@@ -15,9 +15,24 @@ target 'Delta' do
     pod 'N64DeltaCore', :path => 'Cores/N64DeltaCore'
     pod 'GBCDeltaCore', :path => 'Cores/GBCDeltaCore'
     pod 'GBADeltaCore', :path => 'Cores/GBADeltaCore'
+
     pod 'MelonDSDeltaCore', :path => 'Cores/MelonDSDeltaCore'
     pod 'Roxas', :path => 'External/Roxas'
     pod 'Harmony', :path => 'External/Harmony'
+    
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    
+    pod 'Alamofire'
+    pod 'Kingfisher'
+    pod 'Toast-Swift'
+    
+    pod 'SwiftyStoreKit'
+
+    pod 'OtterScaleiOS', :git => "https://github.com/AgentChe/OtterScaleiOS.git"
+    
+
+
 end
 
 target 'DeltaPreviews' do

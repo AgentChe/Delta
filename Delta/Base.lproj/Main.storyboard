@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SPq-Bk-fQl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SPq-Bk-fQl">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -117,9 +117,6 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vf5-Iy-lAb" userLabel="Launch Screen">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <connections>
-                                    <segue destination="ibA-aC-X3M" kind="embed" id="fsv-uf-AOE"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,14 +128,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxd-LN-YF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-490.39999999999998" y="284.70764617691157"/>
-        </scene>
-        <!--LaunchScreen-->
-        <scene sceneID="R8v-WR-ElO">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LaunchScreen" id="ibA-aC-X3M" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i4G-1R-eCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="87" y="284"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="ASV-Uk-0aP">
@@ -179,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="1036" y="605"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="zJI-sC-1sm">
             <objects>
-                <navigationController storyboardIdentifier="gamesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wKV-3d-NIY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="gamesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wKV-3d-NIY" customClass="CustomNavigationController" customModule="Delta" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wj9-1e-eev">
@@ -297,7 +286,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tey-6Z-UHp"/>
+        <segue reference="eR2-0c-0Rv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SettingsButton" width="22" height="22"/>

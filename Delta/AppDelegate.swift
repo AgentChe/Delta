@@ -11,7 +11,7 @@ import UIKit
 import DeltaCore
 import Harmony
 import AltKit
-
+import OtterScaleiOS
 import ShowTouches
 
 private extension CFNotificationName
@@ -36,6 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        
+        FacebookManager.shared.initialize(app: application, launchOptions: launchOptions)
+        OtterScale.shared.initialize(host: GlobalDefinitions.otterScaleHost, apiKey: GlobalDefinitions.otterScaleApiKey)
+        
+        PurchaseValidationObserver.shared.startObserve()
+        
+        IAPManager.initialize()
+        
         Settings.registerDefaults()
         
         self.registerCores()
