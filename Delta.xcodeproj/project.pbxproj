@@ -236,7 +236,6 @@
 		A3BCB16B2D6D896800C6F40E /* libRxSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB1682D6D896800C6F40E /* libRxSwift.a */; };
 		A3BCB16E2D6D897F00C6F40E /* libAppAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB16C2D6D897F00C6F40E /* libAppAuth.a */; };
 		A3BCB16F2D6D897F00C6F40E /* libGTMAppAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB16D2D6D897F00C6F40E /* libGTMAppAuth.a */; };
-		A3BCB1712D6D898700C6F40E /* libBranch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB1702D6D898700C6F40E /* libBranch.a */; };
 		A3BCB1752D6D899000C6F40E /* libGoogleAPIClientForREST.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB1732D6D899000C6F40E /* libGoogleAPIClientForREST.a */; };
 		A3BCB1772D6D89A900C6F40E /* libKingfisher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB1762D6D89A900C6F40E /* libKingfisher.a */; };
 		A3BCB1792D6D89B000C6F40E /* libOtterScaleiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB1782D6D89B000C6F40E /* libOtterScaleiOS.a */; };
@@ -248,7 +247,6 @@
 		A3BCB1852D6D89EA00C6F40E /* libToast-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB1842D6D89EA00C6F40E /* libToast-Swift.a */; };
 		A3BCB1872D6D89F100C6F40E /* libZIPFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB1862D6D89F100C6F40E /* libZIPFoundation.a */; };
 		A3BCB1892D6D8A0300C6F40E /* libAlamofire.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB1882D6D8A0300C6F40E /* libAlamofire.a */; };
-		A3BCB18B2D6D8A1000C6F40E /* libAmplitude-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BCB18A2D6D8A1000C6F40E /* libAmplitude-iOS.a */; };
 		AC1C991029F8B8C30020E6E4 /* ToastNotificationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1C990F29F8B8C30020E6E4 /* ToastNotificationOptions.swift */; };
 		AC1C992729F9F1CF0020E6E4 /* GameViewController+ExperimentalToasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1C992629F9F1CF0020E6E4 /* GameViewController+ExperimentalToasts.swift */; };
 		ACF7E30D29F73D03000FE071 /* GameScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7E30C29F73D03000FE071 /* GameScreenshots.swift */; };
@@ -736,7 +734,6 @@
 		A3BCB1682D6D896800C6F40E /* libRxSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRxSwift.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BCB16C2D6D897F00C6F40E /* libAppAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAppAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BCB16D2D6D897F00C6F40E /* libGTMAppAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGTMAppAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3BCB1702D6D898700C6F40E /* libBranch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBranch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BCB1722D6D899000C6F40E /* libGoogleDrive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleDrive.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BCB1732D6D899000C6F40E /* libGoogleAPIClientForREST.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGoogleAPIClientForREST.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BCB1762D6D89A900C6F40E /* libKingfisher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKingfisher.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -749,7 +746,6 @@
 		A3BCB1842D6D89EA00C6F40E /* libToast-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libToast-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BCB1862D6D89F100C6F40E /* libZIPFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libZIPFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BCB1882D6D8A0300C6F40E /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3BCB18A2D6D8A1000C6F40E /* libAmplitude-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libAmplitude-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1C990F29F8B8C30020E6E4 /* ToastNotificationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotificationOptions.swift; sourceTree = "<group>"; };
 		AC1C992629F9F1CF0020E6E4 /* GameViewController+ExperimentalToasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+ExperimentalToasts.swift"; sourceTree = "<group>"; };
 		ACF7E30C29F73D03000FE071 /* GameScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenshots.swift; sourceTree = "<group>"; };
@@ -1028,7 +1024,6 @@
 				A3BCB17F2D6D89C800C6F40E /* libSQLite.swift.a in Frameworks */,
 				D52CB8C82CE2B7C800B04458 /* StoreKit.framework in Frameworks */,
 				A3BCB17D2D6D89C300C6F40E /* libSMCalloutView.a in Frameworks */,
-				A3BCB1712D6D898700C6F40E /* libBranch.a in Frameworks */,
 				A3BCB1692D6D896800C6F40E /* libRxCocoa.a in Frameworks */,
 				BF69FBAA23E399AA0051BEEA /* CoreMotion.framework in Frameworks */,
 				A3BCB1832D6D89E000C6F40E /* libSwiftyStoreKit.a in Frameworks */,
@@ -1039,7 +1034,6 @@
 				A3BCB1822D6D89E000C6F40E /* libSwiftyDropbox.a in Frameworks */,
 				A3BCB1752D6D899000C6F40E /* libGoogleAPIClientForREST.a in Frameworks */,
 				A3BCB1872D6D89F100C6F40E /* libZIPFoundation.a in Frameworks */,
-				A3BCB18B2D6D8A1000C6F40E /* libAmplitude-iOS.a in Frameworks */,
 				A3BCB1792D6D89B000C6F40E /* libOtterScaleiOS.a in Frameworks */,
 				A3BCB1572D6D82E900C6F40E /* FirebaseAnalytics in Frameworks */,
 				BFFDF04623E3D3A600931B96 /* libMupen64Plus.a in Frameworks */,
@@ -2312,7 +2306,6 @@
 		BF9F4FCD1AAD7B25004C9500 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A3BCB18A2D6D8A1000C6F40E /* libAmplitude-iOS.a */,
 				A3BCB1882D6D8A0300C6F40E /* libAlamofire.a */,
 				A3BCB1862D6D89F100C6F40E /* libZIPFoundation.a */,
 				A3BCB1842D6D89EA00C6F40E /* libToast-Swift.a */,
@@ -2325,7 +2318,6 @@
 				A3BCB1762D6D89A900C6F40E /* libKingfisher.a */,
 				A3BCB1722D6D899000C6F40E /* libGoogleDrive.a */,
 				A3BCB1732D6D899000C6F40E /* libGoogleAPIClientForREST.a */,
-				A3BCB1702D6D898700C6F40E /* libBranch.a */,
 				A3BCB16C2D6D897F00C6F40E /* libAppAuth.a */,
 				A3BCB16D2D6D897F00C6F40E /* libGTMAppAuth.a */,
 				A3BCB1662D6D896800C6F40E /* libRxCocoa.a */,
